@@ -44,6 +44,8 @@ var _tables = require('./data/tables');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import cors from 'cors';
+
 var app = (0, _express2.default)();
 
 var port = process.env.PORT || 3000;
@@ -56,6 +58,14 @@ app.use((0, _morgan2.default)('dev'));
 // Parse incoming requests data
 app.use(_bodyParser2.default.json());
 app.use(_bodyParser2.default.urlencoded({ extended: false }));
+
+// app.use(cors())
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Routes which should handle requests
 app.use('/api/v2/auth', _authRoutes2.default);

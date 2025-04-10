@@ -148,7 +148,7 @@ var AuthController = function () {
         var token = _jsonwebtoken2.default.sign(rows[0], '' + process.env.SECRET_KEY_CODE, options);
         return res.status(200).send({
           status: res.statusCode,
-          data: {
+          user: {
             token: token,
             id: rows[0].id,
             firstName: rows[0].firstname,

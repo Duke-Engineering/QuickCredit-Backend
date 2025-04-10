@@ -44,7 +44,7 @@ var createTables = function createTables() {
     try {
       await pool.query(_queries2.default.createTables);
 
-      var admin = ['Herve', 'Nkurikiyimfura', 'admin@gmail.com', _bcryptjs2.default.hashSync('secret', 10), 'Kigali, Rwanda', 'verified', 'true', new Date(), new Date()];
+      var admin = ['Michael', 'Hammond', 'hammond@shopa.life', _bcryptjs2.default.hashSync('1234567890', 10), 'Danfa, Accra, Ghana', 'verified', 'true', new Date(), new Date()];
       await pool.query(_queries2.default.insertAdmin, admin);
       resolve();
     } catch (error) {

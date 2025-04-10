@@ -6,3 +6,4 @@ coverage
 .vscode/
 .DS_Store
 UI/.DS_Store
+package-lock.json

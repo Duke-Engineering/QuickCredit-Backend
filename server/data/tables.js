@@ -24,11 +24,11 @@ const createTables = () => new Promise(async (resolve, reject) => {
     await pool.query(queries.createTables);
 
     const admin = [
-      'Herve',
-      'Nkurikiyimfura',
-      'admin@gmail.com',
-      bcrypt.hashSync('secret', 10),
-      'Kigali, Rwanda',
+      'Michael',
+      'Hammond',
+      'hammond@shopa.life',
+      bcrypt.hashSync('1234567890', 10),
+      'Danfa, Accra, Ghana',
       'verified',
       'true',
       new Date(),
